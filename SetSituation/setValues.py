@@ -1,18 +1,11 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QMessageBox, QPushButton
-from functions import *
 from functools import partial
-
-settings = []
-with open('SetSituation/settings.txt', 'r') as file:
-    for line in file:
-        settings.append(line)
 
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.setFixedSize(1089, 643)
+        MainWindow.resize(1089, 512)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.rez1 = QtWidgets.QWidget(self.centralwidget)
@@ -507,141 +500,6 @@ class Ui_MainWindow(object):
         self.mCl_suction.setFont(font)
         self.mCl_suction.setStyleSheet("background-color: rgb(255, 255, 127);")
         self.mCl_suction.setObjectName("mCl_suction")
-        self.Barrel_1 = QtWidgets.QLabel(self.centralwidget)
-        self.Barrel_1.setGeometry(QtCore.QRect(40, 460, 81, 16))
-        self.Barrel_1.setStyleSheet("font: 87 12pt \"Arial Black\";\n"
-                                    "color: rgb(255, 255, 0);")
-        self.Barrel_1.setObjectName("Barrel_1")
-        self.Barrel_2 = QtWidgets.QLabel(self.centralwidget)
-        self.Barrel_2.setGeometry(QtCore.QRect(250, 460, 81, 16))
-        self.Barrel_2.setStyleSheet("font: 87 12pt \"Arial Black\";\n"
-                                    "color: rgb(255, 255, 0);")
-        self.Barrel_2.setObjectName("Barrel_2")
-        self.Barrel_3 = QtWidgets.QLabel(self.centralwidget)
-        self.Barrel_3.setGeometry(QtCore.QRect(450, 460, 81, 16))
-        self.Barrel_3.setStyleSheet("font: 87 12pt \"Arial Black\";\n"
-                                    "color: rgb(255, 255, 0);")
-        self.Barrel_3.setObjectName("Barrel_3")
-        self.Status_label1 = QtWidgets.QLabel(self.centralwidget)
-        self.Status_label1.setGeometry(QtCore.QRect(10, 500, 81, 16))
-        self.Status_label1.setStyleSheet("font: 87 12pt \"Arial Black\";\n"
-                                         "color: rgb(170, 255, 255);")
-        self.Status_label1.setObjectName("Status_label1")
-        self.Status_label2 = QtWidgets.QLabel(self.centralwidget)
-        self.Status_label2.setGeometry(QtCore.QRect(210, 500, 81, 16))
-        self.Status_label2.setStyleSheet("font: 87 12pt \"Arial Black\";\n"
-                                         "color: rgb(170, 255, 255);")
-        self.Status_label2.setObjectName("Status_label2")
-        self.Status_label3 = QtWidgets.QLabel(self.centralwidget)
-        self.Status_label3.setGeometry(QtCore.QRect(410, 500, 81, 16))
-        self.Status_label3.setStyleSheet("font: 87 12pt \"Arial Black\";\n"
-                                         "color: rgb(170, 255, 255);")
-        self.Status_label3.setObjectName("Status_label3")
-        self.Status_B1 = QtWidgets.QLabel(self.centralwidget)
-        self.Status_B1.setGeometry(QtCore.QRect(80, 500, 101, 16))
-        self.Status_B1.setStyleSheet("font: 87 12pt \"Arial Black\";\n"
-                                     "color: rgb(255, 255, 255);")
-        self.Status_B1.setObjectName("Status_B1")
-        self.Status_B2 = QtWidgets.QLabel(self.centralwidget)
-        self.Status_B2.setGeometry(QtCore.QRect(280, 500, 101, 16))
-        self.Status_B2.setStyleSheet("font: 87 12pt \"Arial Black\";\n"
-                                     "color: rgb(255, 255, 255);")
-        self.Status_B2.setObjectName("Status_B2")
-        self.Status_B3 = QtWidgets.QLabel(self.centralwidget)
-        self.Status_B3.setGeometry(QtCore.QRect(480, 500, 101, 16))
-        self.Status_B3.setStyleSheet("font: 87 12pt \"Arial Black\";\n"
-                                     "color: rgb(255, 255, 255);")
-        self.Status_B3.setObjectName("Status_B3")
-        self.Status_label2_2 = QtWidgets.QLabel(self.centralwidget)
-        self.Status_label2_2.setGeometry(QtCore.QRect(210, 530, 81, 16))
-        self.Status_label2_2.setStyleSheet("font: 87 12pt \"Arial Black\";\n"
-                                           "color: rgb(170, 255, 255);")
-        self.Status_label2_2.setObjectName("Status_label2_2")
-        self.Status_label1_2 = QtWidgets.QLabel(self.centralwidget)
-        self.Status_label1_2.setGeometry(QtCore.QRect(10, 530, 81, 16))
-        self.Status_label1_2.setStyleSheet("font: 87 12pt \"Arial Black\";\n"
-                                           "color: rgb(170, 255, 255);")
-        self.Status_label1_2.setObjectName("Status_label1_2")
-        self.Volume_B3 = QtWidgets.QLabel(self.centralwidget)
-        self.Volume_B3.setGeometry(QtCore.QRect(490, 530, 101, 16))
-        self.Volume_B3.setStyleSheet("font: 87 12pt \"Arial Black\";\n"
-                                     "color: rgb(255, 255, 255);")
-        self.Volume_B3.setObjectName("Volume_B3")
-        self.Volume_B1 = QtWidgets.QLabel(self.centralwidget)
-        self.Volume_B1.setGeometry(QtCore.QRect(90, 530, 101, 16))
-        self.Volume_B1.setStyleSheet("font: 87 12pt \"Arial Black\";\n"
-                                     "color: rgb(255, 255, 255);")
-        self.Volume_B1.setObjectName("Volume_B1")
-        self.Volume_B2 = QtWidgets.QLabel(self.centralwidget)
-        self.Volume_B2.setGeometry(QtCore.QRect(290, 530, 101, 16))
-        self.Volume_B2.setStyleSheet("font: 87 12pt \"Arial Black\";\n"
-                                     "color: rgb(255, 255, 255);")
-        self.Volume_B2.setObjectName("Volume_B2")
-        self.Status_label3_2 = QtWidgets.QLabel(self.centralwidget)
-        self.Status_label3_2.setGeometry(QtCore.QRect(410, 530, 81, 16))
-        self.Status_label3_2.setStyleSheet("font: 87 12pt \"Arial Black\";\n"
-                                           "color: rgb(170, 255, 255);")
-        self.Status_label3_2.setObjectName("Status_label3_2")
-        self.Status_label2_3 = QtWidgets.QLabel(self.centralwidget)
-        self.Status_label2_3.setGeometry(QtCore.QRect(210, 560, 81, 16))
-        self.Status_label2_3.setStyleSheet("font: 87 12pt \"Arial Black\";\n"
-                                           "color: rgb(170, 255, 255);")
-        self.Status_label2_3.setObjectName("Status_label2_3")
-        self.Status_label3_3 = QtWidgets.QLabel(self.centralwidget)
-        self.Status_label3_3.setGeometry(QtCore.QRect(410, 560, 81, 16))
-        self.Status_label3_3.setStyleSheet("font: 87 12pt \"Arial Black\";\n"
-                                           "color: rgb(170, 255, 255);")
-        self.Status_label3_3.setObjectName("Status_label3_3")
-        self.Temp_B1 = QtWidgets.QLabel(self.centralwidget)
-        self.Temp_B1.setGeometry(QtCore.QRect(90, 560, 101, 16))
-        self.Temp_B1.setStyleSheet("font: 87 12pt \"Arial Black\";\n"
-                                   "color: rgb(255, 255, 255);")
-        self.Temp_B1.setObjectName("Temp_B1")
-        self.Status_label1_3 = QtWidgets.QLabel(self.centralwidget)
-        self.Status_label1_3.setGeometry(QtCore.QRect(10, 560, 81, 16))
-        self.Status_label1_3.setStyleSheet("font: 87 12pt \"Arial Black\";\n"
-                                           "color: rgb(170, 255, 255);")
-        self.Status_label1_3.setObjectName("Status_label1_3")
-        self.Temp_B2 = QtWidgets.QLabel(self.centralwidget)
-        self.Temp_B2.setGeometry(QtCore.QRect(290, 560, 101, 16))
-        self.Temp_B2.setStyleSheet("font: 87 12pt \"Arial Black\";\n"
-                                   "color: rgb(255, 255, 255);")
-        self.Temp_B2.setObjectName("Temp_B2")
-        self.Temp_B3 = QtWidgets.QLabel(self.centralwidget)
-        self.Temp_B3.setGeometry(QtCore.QRect(490, 560, 101, 16))
-        self.Temp_B3.setStyleSheet("font: 87 12pt \"Arial Black\";\n"
-                                   "color: rgb(255, 255, 255);")
-        self.Temp_B3.setObjectName("Temp_B3")
-        self.Status_label1_4 = QtWidgets.QLabel(self.centralwidget)
-        self.Status_label1_4.setGeometry(QtCore.QRect(10, 590, 81, 16))
-        self.Status_label1_4.setStyleSheet("font: 87 12pt \"Arial Black\";\n"
-                                           "color: rgb(170, 255, 255);")
-        self.Status_label1_4.setObjectName("Status_label1_4")
-        self.Pressure_B2 = QtWidgets.QLabel(self.centralwidget)
-        self.Pressure_B2.setGeometry(QtCore.QRect(300, 590, 101, 16))
-        self.Pressure_B2.setStyleSheet("font: 87 12pt \"Arial Black\";\n"
-                                       "color: rgb(255, 255, 255);")
-        self.Pressure_B2.setObjectName("Pressure_B2")
-        self.Status_label3_4 = QtWidgets.QLabel(self.centralwidget)
-        self.Status_label3_4.setGeometry(QtCore.QRect(410, 590, 81, 16))
-        self.Status_label3_4.setStyleSheet("font: 87 12pt \"Arial Black\";\n"
-                                           "color: rgb(170, 255, 255);")
-        self.Status_label3_4.setObjectName("Status_label3_4")
-        self.Status_label2_4 = QtWidgets.QLabel(self.centralwidget)
-        self.Status_label2_4.setGeometry(QtCore.QRect(210, 590, 81, 16))
-        self.Status_label2_4.setStyleSheet("font: 87 12pt \"Arial Black\";\n"
-                                           "color: rgb(170, 255, 255);")
-        self.Status_label2_4.setObjectName("Status_label2_4")
-        self.Pressure_B1 = QtWidgets.QLabel(self.centralwidget)
-        self.Pressure_B1.setGeometry(QtCore.QRect(100, 590, 101, 16))
-        self.Pressure_B1.setStyleSheet("font: 87 12pt \"Arial Black\";\n"
-                                       "color: rgb(255, 255, 255);")
-        self.Pressure_B1.setObjectName("Pressure_B1")
-        self.Pressure_B3 = QtWidgets.QLabel(self.centralwidget)
-        self.Pressure_B3.setGeometry(QtCore.QRect(500, 590, 101, 16))
-        self.Pressure_B3.setStyleSheet("font: 87 12pt \"Arial Black\";\n"
-                                       "color: rgb(255, 255, 255);")
-        self.Pressure_B3.setObjectName("Pressure_B3")
         self.mCl1_1_label = QtWidgets.QLabel(self.centralwidget)
         self.mCl1_1_label.setGeometry(QtCore.QRect(830, 20, 71, 21))
         self.mCl1_1_label.setStyleSheet("color: rgb(124, 255, 229);\n"
@@ -782,36 +640,15 @@ class Ui_MainWindow(object):
         self.mCl_suction_status.setStyleSheet("color: rgb(124, 255, 229);\n"
                                               "font: 87 11pt \"Arial Black\";")
         self.mCl_suction_status.setObjectName("mCl_suction_status")
-        self.Sensor1_label = QtWidgets.QLabel(self.centralwidget)
-        self.Sensor1_label.setGeometry(QtCore.QRect(680, 490, 61, 21))
-        self.Sensor1_label.setStyleSheet("color: rgb(170, 0, 255);\n"
-                                         "font: 87 11pt \"Arial Black\";")
-        self.Sensor1_label.setObjectName("Sensor1_label")
-        self.Sensor2_label = QtWidgets.QLabel(self.centralwidget)
-        self.Sensor2_label.setGeometry(QtCore.QRect(680, 520, 61, 21))
-        self.Sensor2_label.setStyleSheet("color: rgb(170, 0, 255);\n"
-                                         "font: 87 11pt \"Arial Black\";")
-        self.Sensor2_label.setObjectName("Sensor2_label")
-        self.Sensor3_label = QtWidgets.QLabel(self.centralwidget)
-        self.Sensor3_label.setGeometry(QtCore.QRect(680, 550, 61, 21))
-        self.Sensor3_label.setStyleSheet("color: rgb(170, 0, 255);\n"
-                                         "font: 87 11pt \"Arial Black\";")
-        self.Sensor3_label.setObjectName("Sensor3_label")
-        self.Sensor1_Status = QtWidgets.QLabel(self.centralwidget)
-        self.Sensor1_Status.setGeometry(QtCore.QRect(750, 490, 121, 21))
-        self.Sensor1_Status.setStyleSheet("color: rgb(170, 0, 255);\n"
-                                          "font: 87 11pt \"Arial Black\";")
-        self.Sensor1_Status.setObjectName("Sensor1_Status")
-        self.Sensor3_Status = QtWidgets.QLabel(self.centralwidget)
-        self.Sensor3_Status.setGeometry(QtCore.QRect(750, 550, 121, 21))
-        self.Sensor3_Status.setStyleSheet("color: rgb(170, 0, 255);\n"
-                                          "font: 87 11pt \"Arial Black\";")
-        self.Sensor3_Status.setObjectName("Sensor3_Status")
-        self.Sensor2_Status = QtWidgets.QLabel(self.centralwidget)
-        self.Sensor2_Status.setGeometry(QtCore.QRect(750, 520, 121, 21))
-        self.Sensor2_Status.setStyleSheet("color: rgb(170, 0, 255);\n"
-                                          "font: 87 11pt \"Arial Black\";")
-        self.Sensor2_Status.setObjectName("Sensor2_Status")
+        self.save_pBut = QtWidgets.QPushButton(self.centralwidget)
+        self.save_pBut.setGeometry(QtCore.QRect(30, 452, 111, 41))
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.save_pBut.setFont(font)
+        self.save_pBut.setObjectName("save_pBut")
         self.Background.raise_()
         self.line.raise_()
         self.rez1.raise_()
@@ -880,33 +717,6 @@ class Ui_MainWindow(object):
         self.mCl_flushing.raise_()
         self.mCl_suction_icon.raise_()
         self.mCl_suction.raise_()
-        self.Barrel_1.raise_()
-        self.Barrel_2.raise_()
-        self.Barrel_3.raise_()
-        self.Status_label1.raise_()
-        self.Status_label2.raise_()
-        self.Status_label3.raise_()
-        self.Status_B1.raise_()
-        self.Status_B2.raise_()
-        self.Status_B3.raise_()
-        self.Status_label2_2.raise_()
-        self.Status_label1_2.raise_()
-        self.Volume_B3.raise_()
-        self.Volume_B1.raise_()
-        self.Volume_B2.raise_()
-        self.Status_label3_2.raise_()
-        self.Status_label2_3.raise_()
-        self.Status_label3_3.raise_()
-        self.Temp_B1.raise_()
-        self.Status_label1_3.raise_()
-        self.Temp_B2.raise_()
-        self.Temp_B3.raise_()
-        self.Status_label1_4.raise_()
-        self.Pressure_B2.raise_()
-        self.Status_label3_4.raise_()
-        self.Status_label2_4.raise_()
-        self.Pressure_B1.raise_()
-        self.Pressure_B3.raise_()
         self.mCl1_1_label.raise_()
         self.mCl1_1_status.raise_()
         self.mCl1_2_status.raise_()
@@ -935,44 +745,22 @@ class Ui_MainWindow(object):
         self.mCl_flushing_status.raise_()
         self.mCl_suction_label.raise_()
         self.mCl_suction_status.raise_()
-        self.Sensor1_label.raise_()
-        self.Sensor2_label.raise_()
-        self.Sensor3_label.raise_()
-        self.Sensor1_Status.raise_()
-        self.Sensor3_Status.raise_()
-        self.Sensor2_Status.raise_()
+        self.save_pBut.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-        self.Psuc = 10
-        self.Pflush = 506
-        self.PsucBf = 0
-        self.PflushBf = 0
-        self.PressureSensors = [self.Psuc, self.Pflush, self.PsucBf, self.PflushBf]
-
-
-
-        self.barrels = [self.rez1, self.rez2, self.rez3]
-        self.barrelsStatusLabel = [self.Status_B1, self.Status_B2, self.Status_B3]
-        self.barrelsVolume = [self.Volume_B1, self.Volume_B2, self.Volume_B3]
-        self.barrelsTemp = [self.Temp_B1, self.Temp_B2, self.Temp_B3]
-        self.barrelsPressure = [self.Pressure_B1, self.Pressure_B2, self.Pressure_B3]
-        self.barrelsStatus = []
-
         self.mSensors = [self.Sensor1_pBut, self.Sensor2_pBut, self.Sensor3_pBut]
         self.mSensorsIcons = []
-        self.MSensStatusLabels = []
         self.mSensorsNames = []
-        self.MSensStatus = []
 
         for el in self.mSensors:
             exec(f"self.mSensorsIcons.append(self.{el.objectName()[:-5]}_icon)")
-            exec(f"self.MSensStatusLabels.append(self.{el.objectName()[:-5]}_Status.objectName())")
             exec(f"self.mSensorsNames.append(self.{el.objectName()}.objectName())")
 
-
+        self.MSensStatus = [1, 1, 1]
+        self.Section1Sens = dict(zip(self.mSensorsNames, self.MSensStatus))
 
         self.buttons = [self.mCl1_1, self.mCl1_2, self.mCl1_3,
                         self.mCl1_4, self.mCl2_1, self.mCl2_2,
@@ -989,15 +777,9 @@ class Ui_MainWindow(object):
             exec(f"self.status.append(self.{el.objectName()}_status.objectName())")
             exec(f"self.buttonsNames.append(self.{el.objectName()}.objectName())")
 
-        self.switchesStatus = []
-
-        self.setValues()
-
-        self.Section1Sens = dict(zip(self.mSensorsNames, self.MSensStatus))
+        self.switchesStatus = self.firstSwitchesStatus()
 
         self.Section1switches = dict(zip(self.buttonsNames, self.switchesStatus))
-
-        self.setPressure()
 
         self.rendering()
 
@@ -1026,33 +808,6 @@ class Ui_MainWindow(object):
         self.Sensor3_pBut.setText(_translate("MainWindow", "m"))
         self.mCl_flushing.setText(_translate("MainWindow", "У"))
         self.mCl_suction.setText(_translate("MainWindow", "У"))
-        self.Barrel_1.setText(_translate("MainWindow", "Barrel 1"))
-        self.Barrel_2.setText(_translate("MainWindow", "Barrel 2"))
-        self.Barrel_3.setText(_translate("MainWindow", "Barrel 3"))
-        self.Status_label1.setText(_translate("MainWindow", "Status:"))
-        self.Status_label2.setText(_translate("MainWindow", "Status:"))
-        self.Status_label3.setText(_translate("MainWindow", "Status:"))
-        self.Status_B1.setText(_translate("MainWindow", "загрузка..."))
-        self.Status_B2.setText(_translate("MainWindow", "загрузка..."))
-        self.Status_B3.setText(_translate("MainWindow", "загрузка..."))
-        self.Status_label2_2.setText(_translate("MainWindow", "Volume:"))
-        self.Status_label1_2.setText(_translate("MainWindow", "Volume:"))
-        self.Volume_B3.setText(_translate("MainWindow", "загрузка..."))
-        self.Volume_B1.setText(_translate("MainWindow", "загрузка..."))
-        self.Volume_B2.setText(_translate("MainWindow", "загрузка..."))
-        self.Status_label3_2.setText(_translate("MainWindow", "Volume:"))
-        self.Status_label2_3.setText(_translate("MainWindow", "Temp:"))
-        self.Status_label3_3.setText(_translate("MainWindow", "Temp:"))
-        self.Temp_B1.setText(_translate("MainWindow", "..."))
-        self.Status_label1_3.setText(_translate("MainWindow", "Temp:"))
-        self.Temp_B2.setText(_translate("MainWindow", "..."))
-        self.Temp_B3.setText(_translate("MainWindow", "..."))
-        self.Status_label1_4.setText(_translate("MainWindow", "Pressure:"))
-        self.Pressure_B2.setText(_translate("MainWindow", "..."))
-        self.Status_label3_4.setText(_translate("MainWindow", "Pressure:"))
-        self.Status_label2_4.setText(_translate("MainWindow", "Pressure:"))
-        self.Pressure_B1.setText(_translate("MainWindow", "..."))
-        self.Pressure_B3.setText(_translate("MainWindow", "..."))
         self.mCl1_1_label.setText(_translate("MainWindow", "mCl1_1: "))
         self.mCl1_1_status.setText(_translate("MainWindow", "..."))
         self.mCl1_2_status.setText(_translate("MainWindow", "..."))
@@ -1081,38 +836,10 @@ class Ui_MainWindow(object):
         self.mCl_flushing_status.setText(_translate("MainWindow", "..."))
         self.mCl_suction_label.setText(_translate("MainWindow", "mCl_suction: "))
         self.mCl_suction_status.setText(_translate("MainWindow", "..."))
-        self.Sensor1_label.setText(_translate("MainWindow", "Sens1: "))
-        self.Sensor2_label.setText(_translate("MainWindow", "Sens2: "))
-        self.Sensor3_label.setText(_translate("MainWindow", "Sens3: "))
-        self.Sensor1_Status.setText(_translate("MainWindow", "..."))
-        self.Sensor3_Status.setText(_translate("MainWindow", "..."))
-        self.Sensor2_Status.setText(_translate("MainWindow", "..."))
+        self.save_pBut.setText(_translate("MainWindow", "Save"))
 
-    def setValues(self):
-        self.switchesStatus = list(map(int, settings[0].split()))
-        self.barrelsStatus = list(map(int, settings[1].split()))
-        self.MSensStatus = list(map(int, settings[2].split()))
-
-        self.Sensor1 = MSens(0, True)
-        self.Sensor2 = MSens(1, True)
-        self.Sensor3 = MSens(2, True)
-
-        self.Bar1 = Barrel(self.barrelsStatus[0], 4, 0, 0, 0)
-        self.Bar2 = Barrel(self.barrelsStatus[1], 4, 0, 0, 1)
-        self.Bar3 = Barrel(self.barrelsStatus[2], 4, 0, 0, 2)
-        self.Bar =[self.Bar1, self.Bar2, self.Bar3]
-
-    def setPressure(self):
-        if list(self.Section1switches.values())[-1] == 0: self.PsucBf = 0
-        else: self.PsucBf = 10
-
-        if list(self.Section1switches.values())[-2] == 0: self.PflushBf = 0
-        else: self.PflushBf = 506
-
-        self.PressureSensors = [self.Psuc, self.Pflush, self.PsucBf, self.PflushBf]
-        print(self.PressureSensors)
-        print(list(self.Section1switches.values()))
-
+    def firstSwitchesStatus(self):
+        return [0 for i in self.buttonsNames]
 
     def rendering(self):
         f = -1
@@ -1127,7 +854,6 @@ class Ui_MainWindow(object):
                 else:
                     self.set_green(icon)
         del (f)
-
         self.mCl_suction_status.setText(str(self.Section1switches.get(self.mCl_suction.objectName())))
         if int(self.Section1switches.get(self.mCl_suction.objectName())) == 0:
             self.set_red(self.mCl_suction_icon)
@@ -1139,66 +865,6 @@ class Ui_MainWindow(object):
         else:
             self.set_green(self.mCl_flushing_icon)
 
-        for i in range(len(self.mSensors)):
-            el = str(self.Section1Sens.get(self.mSensorsNames[i]))
-            exec(f"self.{self.MSensStatusLabels[i]}.setText('{el}')")
-            icon = self.mSensorsIcons[i]
-            if int(el) == 0:
-                self.set_grey(icon)
-            else:
-                self.set_purple(icon)
-
-        self.BarrelRender()
-
-    def BarrelRender(self):
-        self.barrelsStatus.clear()
-        val = list(self.Section1switches.values())
-        for i in range(0, 9, 4):
-            if (int(val[0 + i]) + int(val[2 + i]) + int(val[3 + i])) == 3:
-                self.barrelsStatus.append(1)
-            else:
-                self.barrelsStatus.append(0)
-        for i in range(len(self.barrelsStatus)):
-            if self.barrelsStatus[i] != 1:
-                self.barrelsStatusLabel[i].setText("Отключен")
-                self.barrelsStatusLabel[i].setStyleSheet('font: 87 12pt "Arial Black";'
-                                                         'color: #ff0000;')
-                self.Bar[i].set_vallue_barrel(0,101)
-            else:
-                self.barrelsStatusLabel[i].setText("Активен")
-                self.barrelsStatusLabel[i].setStyleSheet('font: 87 12pt "Arial Black";'
-                                                         'color: #00ff00;')
-                self.Bar[i].set_vallue_barrel(55,1300)
-            info = self.Bar[i].get_info_barrel()
-            self.barrelsVolume[i].setText(str(info[1]) +" м^3")
-            self.barrelsPressure[i].setText(str(info[3]) +" кПа")
-            self.barrelsTemp[i].setText(str(info[2]) +" \"C")
-
-    def dialog(self, dict, name, obj, icon):
-        confirmation = QMessageBox()
-        confirmation.setWindowTitle("Подтверждение")
-        confirmation.setText("Изменить положение переключателя?")
-        confirmation.addButton(QPushButton("Переключить"), QMessageBox.YesRole)
-        confirmation.addButton(QPushButton("Отмена"), QMessageBox.RejectRole)
-
-        ret = confirmation.exec()
-
-        if ret == 0: self.mCl_click(dict, name, obj, icon)
-
-    def dialog_Sens(self, dict, name, obj, icon):
-        confirmation = QMessageBox()
-        confirmation.setWindowTitle("Подтверждение")
-        if dict[name] == 1:
-            confirmation.setText("Отключить датчик аварийной защиты?")
-        else:
-            confirmation.setText("Включить датчик аварийной защиты?")
-        confirmation.addButton(QPushButton("Подтверждаю"), QMessageBox.YesRole)
-        confirmation.addButton(QPushButton("Отмена"), QMessageBox.RejectRole)
-
-        ret = confirmation.exec()
-
-        if ret == 0: self.mSens_click(dict, name, obj, icon)
-
     def mCl_click(self, dict, name, obj, icon):
         if dict[name] == 0:
             dict[name] = 1
@@ -1207,20 +873,14 @@ class Ui_MainWindow(object):
             dict[name] = 0
             self.set_red(icon)
         exec(f"self.{obj}.setText('{str(dict.get(name))}')")
-        self.BarrelRender()
-        self.setPressure()
 
-
-    def mSens_click(self, dict, name, obj, icon):
+    def mSens_click(self, dict, name, icon):
         if dict[name] == 0:
             dict[name] = 1
             self.set_purple(icon)
         else:
             dict[name] = 0
             self.set_grey(icon)
-        exec(f"self.{obj}.setText('{str(dict.get(name))}')")
-        self.BarrelRender()
-        self.setPressure()
 
     def set_green(self, icon):
         icon.setStyleSheet('border: 20px solid transparent;'
@@ -1240,17 +900,31 @@ class Ui_MainWindow(object):
         icon.setStyleSheet('background-color: rgb(171, 171, 171);'
                            'border-bottom: 10px solid #717171;')
 
+    def saveValues(self):
+        barrels = []
+        val = list(self.Section1switches.values())
+        for i in range(0, 9, 4):
+            if (int(val[0 + i]) + int(val[2 + i]) + int(val[3 + i])) == 3:
+                barrels.append(1)
+            else:
+                barrels.append(0)
+        with open('settings.txt', 'w') as file:
+            file.write(" ".join(map(str, self.Section1switches.values())) + "\n")
+            file.write(" ".join(map(str, barrels)) + "\n")
+            file.write(" ".join(map(str, self.Section1Sens.values())))
+
     def add_functions(self):
 
         for i in range(len(self.buttons)):
             self.buttons[i].clicked.connect(
-                partial(self.dialog, self.Section1switches, name=self.buttonsNames[i], obj=self.status[i],
+                partial(self.mCl_click, self.Section1switches, name=self.buttonsNames[i], obj=self.status[i],
                         icon=self.icons[i]))
+
+        self.save_pBut.clicked.connect(lambda: self.saveValues())
 
         for i in range(len(self.mSensors)):
             self.mSensors[i].clicked.connect(
-                partial(self.dialog_Sens, self.Section1Sens, name=self.mSensorsNames[i],
-                        obj=self.MSensStatusLabels[i], icon=self.mSensorsIcons[i]))
+                partial(self.mSens_click, self.Section1Sens, name=self.mSensorsNames[i], icon=self.mSensorsIcons[i]))
 
 
 if __name__ == "__main__":
